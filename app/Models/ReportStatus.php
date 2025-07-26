@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReportStatus extends Model
 {
+     //menambahkan column tempat menampung data pada tabel ReportStatus
     protected $fillable = [
         'report_id',
         'image',
@@ -13,7 +14,7 @@ class ReportStatus extends Model
         'description'
 
     ];
-
+    //fungsi untuk menghubungkan model ReportStatus dengan model Report
     public function report()
     {
         // satu status memiliki banyak laporan

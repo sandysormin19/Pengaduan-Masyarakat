@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Report extends Model
 {
+    //menambahkan column tempat menampung data pada tabel Report
     protected $fillable = [
         'code',
         'resident_id',
@@ -18,6 +19,7 @@ class Report extends Model
         'address',
         'user_id',
     ];
+    //fungsi untuk menghubungkan model Report dengan model resident
     public function resident()
     {
         //satu laporan dimiliki oleh satu resident
