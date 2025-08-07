@@ -3,9 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class ReportStatus extends Model
 {
+    use SoftDeletes;
      //menambahkan column tempat menampung data pada tabel ReportStatus
     protected $fillable = [
         'report_id',

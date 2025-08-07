@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->enum('status',['delivered', 'in_progress', 'completed', 'rejected']);
             $table->longText('description');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

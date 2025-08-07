@@ -3,9 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Resident extends Model
 {
+    use SoftDeletes;
     //menambahkan column tempat menampung data pada tabel Resident
     protected $fillable =[
         'user_id',
