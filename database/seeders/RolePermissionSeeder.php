@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission; // ✅ ini penting
+use Spatie\Permission\Models\Role;       // ✅ kalau pakai Role juga
 
 class RolePermissionSeeder extends Seeder
 {
@@ -49,17 +51,17 @@ class RolePermissionSeeder extends Seeder
     {
        foreach ($this->permissions as $key => $value){
         foreach($value as $permission){
-            Permission::first0Create([
+            Permission::firstOrCreate([
                 'name' => $key . '_' . $permission,
 
             ]);
     }
 }
 
-Role::firstOrCreate{[
+Role::firstOrCreate([
     'name' => 'admin',
     'guard_name' => 'web',
-]}->givePermissionTo(Permission::all());
+])->givePermissionTo(Permission::all());
          Role::firstOrCreate([
                 'name' => 'resident',
                 'guard_name' => 'web',
@@ -70,7 +72,7 @@ Role::firstOrCreate{[
                 'report_edit',
                 'report_delete',
 
-                'report-status_view',
+                'report_status_view',
           ]);
     }
 }
