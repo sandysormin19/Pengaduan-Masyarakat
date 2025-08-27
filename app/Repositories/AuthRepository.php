@@ -2,14 +2,19 @@
 
 namespace App\Repositories;
 
-use App\Interfaces\AuthRepositoryInterface; // ✅ Import interface
-use Illuminate\Support\Facades\Auth;        // ✅ Import facade Auth
+use App\Interfaces\AuthRepositoryInterface;
+use Illuminate\Support\Facades\Auth;
 
 class AuthRepository implements AuthRepositoryInterface
 {
     public function login(array $credentials)
     {
         // Melakukan autentikasi user
-        return Auth::attempt($credentials); // ✅ Gunakan facade Auth
+        return Auth::attempt($credentials);
+    }
+    public function logout()
+    {
+        // Melakukan logout user
+       return Auth::logout();
     }
 }

@@ -36,4 +36,9 @@ public function store(StoreLoginRequest $request ){
         'email' => 'Email atau Password anda Salah'
       ]);
     }
+    public function logout()
+    {
+        $this->authRepository->logout();
+        return redirect()->route('login');
+    }
 }
