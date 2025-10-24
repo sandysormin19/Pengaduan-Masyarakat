@@ -31,10 +31,14 @@ public function store(StoreLoginRequest $request ){
             return redirect()->route('admin.dashboard');
         }
 
+
+
       }
+      dd("Anda berhasil login");
       return redirect()->route('login')->withErrors([
         'email' => 'Email atau Password anda Salah'
       ]);
+
     }
     public function logout()
     {
