@@ -31,12 +31,17 @@ public function createResident(array $data)
     public function updateResident(array $data, int $id)
     {
         $resident = $this->getResidentById($id);
+        $resident->user->update([
+            'name'=>$data['name'],
+            'password'=> isset($data['password']) ? bcrypt($data['password']): $resident->user->password,
+        ]);
         return $resident->update($data);
 
     }
     public function deleteResident(int $id)
     {
         $resident = $this->getResidentById($id);
+$resident->user()->delete();
         return $resident->delete();
     }
     // Implementasi metode-metode untuk mengelola data warga

@@ -29,11 +29,13 @@
                             <td>
                                 <img src="{{ asset('storage/' . $resident->avatar) }}" alt="Avatar" class="img-fluid" style="max-width: 50px; max-height: 50px;">
                             <td>
-                                <a href="edit.html" class="btn btn-warning">Edit</a>
+                                <a href="{{route('admin.resident.edit', $resident->id)}}" class="btn btn-warning">Edit</a>
 
-                                <a href="show.html" class="btn btn-info">Show</a>
+                                <a href="{{route ('admin.resident.show', $resident->id)}}" class="btn btn-info">Show</a>
 
-                                <form action="" method="POST" class="d-inline">
+                                <form action="{{route('admin.resident.destroy', $resident->id)}}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
                             </td>
