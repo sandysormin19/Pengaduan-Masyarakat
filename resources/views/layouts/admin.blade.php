@@ -46,7 +46,7 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                    @include('sweetalert::alert')
                    @yield('content')
                 </div>
                 <!-- /.container-fluid -->
@@ -58,7 +58,7 @@
             @include('includes.footer')
             <!-- End of Footer -->
 
-       
+
 
         </div>
         <!-- End of Content Wrapper -->
